@@ -1,0 +1,5 @@
+{
+  "pathParameters": {
+    "query": "{goals{name id goalIncrements {id}}}"
+  }
+}

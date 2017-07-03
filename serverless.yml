@@ -1,0 +1,27 @@
+service: example-serverless-graphql
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpackIncludeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: prod
+  region: us-west-2
+
+functions:
+  graphql:
+    environment:
+    handler: graphqlHandler.graphqlHandler
+    events:
+      - http:
+          path: graphql/{query}
+          method: GET
+          integration: lambda
+          cors: true
+          request:
+            parameters:
+              query: true

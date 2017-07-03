@@ -1,0 +1,37 @@
+{
+  "name": "example-serverless-graphql",
+  "version": "1.0.0",
+  "description": "Modularize Graphql on both a Node server(for dev) and AWS Lambda using serverless",
+  "main": "graphqlHandler.js",
+  "scripts": {
+    "localNodeServer": "node ./src/graphql/server.js",
+    "invokeFunction": "serverless webpack invoke --function graphql --path ./src/graphqlHandler.test.json --log"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.34.0",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react-app": "^2.2.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "node": "0.0.0",
+    "serverless-webpack": "^1.0.0-rc.4",
+    "uuid": "^3.0.1",
+    "webpack-node-externals": "^1.5.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.54.0",
+    "babel-runtime": "^6.23.0",
+    "body-parser": "^1.17.2",
+    "casual": "^1.5.14",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.6",
+    "graphql": "^0.10.3",
+    "graphql-tools": "^1.0.0"
+  },
+  "author": "Bryan Schauerte",
+  "license": "ISC"
+}
